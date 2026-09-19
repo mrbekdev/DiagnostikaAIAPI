@@ -1,0 +1,31 @@
+2026-09-18 11:25:35.059 +05 [29846] LOG:  starting PostgreSQL 14.18 (Homebrew) on aarch64-apple-darwin24.4.0, compiled by Apple clang version 17.0.0 (clang-1700.0.13.3), 64-bit
+2026-09-18 11:25:35.060 +05 [29846] LOG:  listening on IPv6 address "::1", port 5433
+2026-09-18 11:25:35.060 +05 [29846] LOG:  listening on IPv4 address "127.0.0.1", port 5433
+2026-09-18 11:25:35.061 +05 [29846] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5433"
+2026-09-18 11:25:35.064 +05 [29847] LOG:  database system was shut down at 2026-09-18 11:25:34 +05
+2026-09-18 11:25:35.067 +05 [29846] LOG:  database system is ready to accept connections
+2026-09-18 13:51:37.962 +05 [33628] ERROR:  insert or update on table "patients" violates foreign key constraint "patients_createdById_fkey"
+2026-09-18 13:51:37.962 +05 [33628] DETAIL:  Key (createdById)=(demo-admin-001) is not present in table "users".
+2026-09-18 13:51:37.962 +05 [33628] STATEMENT:  INSERT INTO "public"."patients" ("id","fullName","pinfl","passport","birthDate","age","gender","region","district","village","complaints","phone","createdById","createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6,CAST($7::text AS "public"."Gender"),$8,$9,$10,$11,$12,$13,$14,$15) RETURNING "public"."patients"."id"
+2026-09-18 13:52:30.167 +05 [33628] ERROR:  insert or update on table "patients" violates foreign key constraint "patients_createdById_fkey"
+2026-09-18 13:52:30.167 +05 [33628] DETAIL:  Key (createdById)=(demo-admin-001) is not present in table "users".
+2026-09-18 13:52:30.167 +05 [33628] STATEMENT:  INSERT INTO "public"."patients" ("id","fullName","pinfl","passport","birthDate","age","gender","region","district","village","complaints","phone","createdById","createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6,CAST($7::text AS "public"."Gender"),$8,$9,$10,$11,$12,$13,$14,$15) RETURNING "public"."patients"."id"
+2026-09-19 11:06:34.087 +05 [38809] ERROR:  insert or update on table "examinations" violates foreign key constraint "examinations_nurseId_fkey"
+2026-09-19 11:06:34.087 +05 [38809] DETAIL:  Key (nurseId)=(demo-nurse-001) is not present in table "users".
+2026-09-19 11:06:34.087 +05 [38809] STATEMENT:  INSERT INTO "public"."examinations" ("id","patientId","nurseId","status","priority","nurseNotes","createdAt","updatedAt") VALUES ($1,$2,$3,CAST($4::text AS "public"."ExaminationStatus"),$5,$6,$7,$8) RETURNING "public"."examinations"."id"
+2026-09-19 11:16:50.171 +05 [39045] ERROR:  insert or update on table "examinations" violates foreign key constraint "examinations_nurseId_fkey"
+2026-09-19 11:16:50.171 +05 [39045] DETAIL:  Key (nurseId)=(demo-nurse-001) is not present in table "users".
+2026-09-19 11:16:50.171 +05 [39045] STATEMENT:  INSERT INTO "public"."examinations" ("id","patientId","nurseId","status","priority","nurseNotes","createdAt","updatedAt") VALUES ($1,$2,$3,CAST($4::text AS "public"."ExaminationStatus"),$5,$6,$7,$8) RETURNING "public"."examinations"."id"
+2026-09-19 12:30:55.238 +05 [42536] ERROR:  insert or update on table "patients" violates foreign key constraint "patients_createdById_fkey"
+2026-09-19 12:30:55.238 +05 [42536] DETAIL:  Key (createdById)=(demo-nurse-001) is not present in table "users".
+2026-09-19 12:30:55.238 +05 [42536] STATEMENT:  INSERT INTO "public"."patients" ("id","fullName","pinfl","passport","birthDate","age","gender","region","district","village","complaints","phone","createdById","createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6,CAST($7::text AS "public"."Gender"),$8,$9,$10,$11,$12,$13,$14,$15) RETURNING "public"."patients"."id"
+2026-09-19 12:42:05.705 +05 [43062] LOG:  could not receive data from client: Connection reset by peer
+2026-09-19 12:49:18.546 +05 [43286] ERROR:  insert or update on table "chat_messages" violates foreign key constraint "chat_messages_senderId_fkey"
+2026-09-19 12:49:18.546 +05 [43286] DETAIL:  Key (senderId)=(demo-nurse-001) is not present in table "users".
+2026-09-19 12:49:18.546 +05 [43286] STATEMENT:  INSERT INTO "public"."chat_messages" ("id","senderId","receiverId","content","isRead","createdAt") VALUES ($1,$2,$3,$4,$5,$6) RETURNING "public"."chat_messages"."id"
+2026-09-19 15:51:41.970 +05 [29848] PANIC:  could not open file "/Users/ismadbek/Desktop/Projects2026/ai-mobil-diagnostika/backend/pgdata/global/pg_control": No such file or directory
+2026-09-19 15:51:42.099 +05 [29846] LOG:  checkpointer process (PID 29848) was terminated by signal 6: Abort trap: 6
+2026-09-19 15:51:42.099 +05 [29846] LOG:  terminating any other active server processes
+2026-09-19 15:51:42.104 +05 [29846] LOG:  all server processes terminated; reinitializing
+2026-09-19 15:51:42.106 +05 [29846] FATAL:  could not stat data directory "/Users/ismadbek/Desktop/Projects2026/ai-mobil-diagnostika/backend/pgdata": No such file or directory
+2026-09-19 15:51:42.106 +05 [29846] LOG:  database system is shut down
